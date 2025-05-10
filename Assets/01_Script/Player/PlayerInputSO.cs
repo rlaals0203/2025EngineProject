@@ -9,9 +9,6 @@ namespace Blade.Players
     {
         [SerializeField] private LayerMask whatIsGround;
         // public event Action<Vector2> OnMovementChange;
-        public event Action OnAttackPressed;
-        public event Action OnRollingPressed;
-        
         public Vector2 MovementKey { get; private set; }
         
         private Controls _controls;
@@ -36,53 +33,6 @@ namespace Blade.Players
         public void OnMove(InputAction.CallbackContext context)
         {
             MovementKey = context.ReadValue<Vector2>();
-        }
-
-        public void OnLook(InputAction.CallbackContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnAttack(InputAction.CallbackContext context)
-        {
-            if(context.performed)
-                OnAttackPressed?.Invoke();
-        }
-
-        public void OnInteract(InputAction.CallbackContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnCrouch(InputAction.CallbackContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnJump(InputAction.CallbackContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnPrevious(InputAction.CallbackContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnNext(InputAction.CallbackContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnSprint(InputAction.CallbackContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnRolling(InputAction.CallbackContext context)
-        {
-            if(context.performed)
-                OnRollingPressed?.Invoke();
         }
 
         public void OnPointer(InputAction.CallbackContext context)

@@ -16,30 +16,12 @@ namespace Blade.Players
 
         [Provide]
         public Player ProvidePlayer() => this;
-
-        #region Temp region
-
-        public float rollingVelocity = 2.2f;
-
-        #endregion
+        
         protected override void Awake()
         {
             base.Awake();
             _stateMachine = new EntityStateMachine(this, states);
-            
-            PlayerInput.OnRollingPressed += HandleRollingKeyPressed;
         }
-
-        private void OnDestroy()
-        {
-            PlayerInput.OnRollingPressed -= HandleRollingKeyPressed;
-        }
-
-        private void HandleRollingKeyPressed()
-        {
-            ChangeState("ROLLING");
-        }
-
         private void Start()
         {
             _stateMachine.ChangeState("IDLE");
