@@ -16,12 +16,12 @@ namespace Blade.Players.States
         public override void Enter()
         {
             base.Enter();
-            _vfxCompo.PlayVFX(footStepEffectName, Vector3.zero, Quaternion.identity);
+            //_vfxCompo.PlayVFX(footStepEffectName, Vector3.zero, Quaternion.identity);
         }
 
         public override void Exit()
         {
-            _vfxCompo.StopVFX(footStepEffectName);
+            //_vfxCompo.StopVFX(footStepEffectName);
             base.Exit();
         }
 
